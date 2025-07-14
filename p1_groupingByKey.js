@@ -19,8 +19,11 @@
 // //   ]
 // // }
 //******* sol : *******//
-const input = [];
-
+const input = [
+  { name: 'Alice', role: 'dev' },
+  { name: 'Bob', role: 'designer' },
+  { name: 'Charlie', role: 'dev' }
+];
 function groupBy(array,key){
   return array.reduce((result,currentItem)=>{
     const groupItem=currentItem[key];
