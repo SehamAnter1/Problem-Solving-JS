@@ -42,5 +42,5 @@ function groupBy<T>(array: T[], key: keyof T): Record<string, T[]> {
 }
 let groupedData = groupBy(inputs, 'role');
 
-console.log(groupedData)
+console.log(groupedData) 
 
