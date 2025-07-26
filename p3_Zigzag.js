@@ -20,9 +20,9 @@
 
 function getZigzag(data) {
   const result = [];
+  let index =0
   for (let i = 0; i < data?.length; i++) {
-    let count = i % 2 ? 2 : 3;
-    let w = count;
+    let w = index  % 2 ? 2 : 3;
     let j = i;
     let row = [];
     while (w && w--) {
@@ -33,10 +33,8 @@ function getZigzag(data) {
       else break;
       if (!w) break;
     }
-    console.log("count before", count);
-    i += count - 1;
-    console.log("count after", count);
-    console.log("result", result);
+    i += w ;
+    index++;
     result.push(row);
   }
   return result;
