@@ -13,7 +13,7 @@ var join = function(arr1, arr2) {
                 if(!(key in item)){
                     item[key]=result[index][key]
                 }                
-            })
+            })  
             result[index]=item;
         }else{
             result.push(item)          
