@@ -24,7 +24,7 @@ var join = function(arr1, arr2) {
             result.push(item)          
         }
     })
-    return result
+    return result.sort((a,b)=>a.id-b.id)
 };
 arr1 =
 [{"id":1,"x":36,"d":26,"f":35},{"id":3,"c":20,"z":75}]
