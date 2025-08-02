@@ -7,7 +7,11 @@ var join = function(arr1, arr2) {
     let joinedArray,result=[];
     joinedArray=[...arr1,...arr2];
                 console.log("item",joinedArray)
-    joinedArray.forEach(item=>{
+//  res: { id: 1, x: 5, y: 10 },{ id: 1, x: 0, z: 3 },
+//  res:  { id: 2, x: 7 }, 
+//  res:{ id: 3, x: 9 }
+
+                joinedArray.forEach(item=>{
         if(Array.isArray(result)&&result.length&&result.find((obj)=>obj.id===item.id)){
             const index = result.findIndex((obj)=>obj.id===item.id);
                 console.log("item[index]",result[index])
@@ -15,7 +19,10 @@ var join = function(arr1, arr2) {
             Object.entries(result[index]).forEach(([key,value])=>{
                 console.log("keu:value",key,value)
                 console.log("result.key",result[index][key])
-                if(!item[key])item[key]=result[index][key]
+                if(!(key in item)){
+                    console.log("item key not found",key)
+                    item[key]=result[index][key]
+                }
                 
                 //  item.key=value
             })
@@ -26,8 +33,14 @@ var join = function(arr1, arr2) {
     })
     return result.sort((a,b)=>a.id-b.id)
 };
-arr1 =
-[{"id":1,"x":36,"d":26,"f":35},{"id":3,"c":20,"z":75}]
-arr2 =
-[{"id":2,"o":48,"z":84,"y":61}]
+const arr1 = [
+  { id: 1, x: 5, y: 10 },
+  { id: 2, x: 7 }
+];
+
+const arr2 = [
+  { id: 1, x: 0, z: 3 },  
+  { id: 3, x: 9 }
+];
+
 console.log(join(arr1,arr2))
