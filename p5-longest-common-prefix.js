@@ -24,3 +24,4 @@ var longestCommonPrefix = function (strs) {
 // strs = ["flower", "flow", "flight"];
 strs = ["cir","car"];
 console.log(longestCommonPrefix(strs));
+// problem url :https://leetcode.com/problems/longest-common-prefix/description/
